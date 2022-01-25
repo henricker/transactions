@@ -19,17 +19,11 @@ func NewCreditCard(number string, name string, expirationMonth int, expirationYe
 		name:            name,
 		number:          number,
 		expirationMonth: expirationMonth,
-		expirationYear:  expirationMonth,
+		expirationYear:  expirationYear,
 		cvv:             cvv,
 	}
 
 	error := cc.IsValid()
-
-	if error != nil {
-		return nil, error
-	}
-
-	error = cc.ValidateMonth()
 
 	if error != nil {
 		return nil, error
