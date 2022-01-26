@@ -2,9 +2,12 @@ module github.com/henricker/processor.service
 
 go 1.17
 
+require github.com/maragudk/migrate v0.4.1
+
 require (
-	github.com/davecgh/go-spew v1.1.0 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/golang/mock v1.6.0 // indirect
+	github.com/mattn/go-sqlite3 v1.14.10
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/stretchr/testify v1.7.0 // indirect
 	golang.org/x/mod v0.4.2 // indirect
