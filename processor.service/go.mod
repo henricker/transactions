@@ -5,6 +5,7 @@ go 1.17
 require github.com/maragudk/migrate v0.4.1
 
 require (
+	github.com/confluentinc/confluent-kafka-go v1.8.2
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/mattn/go-sqlite3 v1.14.10
