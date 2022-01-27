@@ -1,7 +1,20 @@
 package factory
 
-import "github.com/henricker/processor.service/domain/repository"
+import (
+	"database/sql"
 
-type RepositoryFactory interface {
-	CreateTransactionRepository() repository.TransactionRepository
+	repo "github.com/henricker/processor.service/adapter/repository"
+	"github.com/henricker/processor.service/domain/repository"
+)
+
+type RepositoryDatabaseFactory struct {
+	DB *sql.DB
+}
+
+func NewRepositoryDatabaseFactory(db *sql.DB) *RepositoryDatabaseFactory {
+	return &RepositoryDatabaseFactory{DB: db}
+}
+
+func (r RepositoryDatabaseFactory) CreateTransactionRepository() repository.TransactionRepository {
+	return repo.NewTransactionRepositoryDb(r.DB)
 }
