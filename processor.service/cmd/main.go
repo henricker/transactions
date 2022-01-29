@@ -10,12 +10,13 @@ import (
 	"github.com/henricker/processor.service/adapter/presenter/transaction"
 	"github.com/henricker/processor.service/domain/factory"
 	"github.com/henricker/processor.service/usecase/process_transaction"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 func main() {
 
 	//Create db
-	db, err := sql.Open("sqlite3", "test.db")
+	db, err := sql.Open("sqlite3", "transactions.db")
 
 	if err != nil {
 		log.Fatal(err)
