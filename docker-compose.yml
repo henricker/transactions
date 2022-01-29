@@ -1,10 +1,23 @@
 version: "3"
 
 services:
-  app:
-    build: .
+  processor_service:
+    build: ./processor.service/
+    command: go run ./cmd/main.go
+    depends_on:
+      - kafka
     volumes: 
-     - .:/go/src/
+      - ./processor.service/:/go/src/
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1" #gateway do docker
+  
+  api:
+    build: ./api/
+    command: npm run start:dev
+    depends_on:
+      - kafka
+    volumes: 
+      - ./api/:/api/src
     extra_hosts:
      - "host.docker.internal:172.17.0.1" #gateway do docker
   
