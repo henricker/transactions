@@ -4,6 +4,8 @@ services:
   processor_service:
     build: ./processor.service/
     command: go run ./cmd/main.go
+    env_file:
+      - .env
     depends_on:
       - kafka
     volumes: 
@@ -14,6 +16,8 @@ services:
   api:
     build: ./api/
     command: npm run start:dev
+    env_file:
+      - .env
     depends_on:
       - kafka
     volumes: 
