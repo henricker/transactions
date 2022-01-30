@@ -10,7 +10,7 @@ export class DatabaseConfigService {
   }
 
   get databaseName(): string {
-    return 'orders.db';
+    return this.configService.get<string>('database.db');
   }
 
   get entities(): string {
