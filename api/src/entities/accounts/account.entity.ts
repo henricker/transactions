@@ -5,9 +5,9 @@ export class Account {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  email: number;
+  @Column({ nullable: false })
+  email: string;
 
-  @Column()
-  password: number;
+  @Column({ nullable: false })
+  password: string;
 }
