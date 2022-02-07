@@ -22,6 +22,8 @@ services:
       - kafka
     volumes: 
       - ./api/:/api/src
+    ports:
+      - "3000:3000"
     extra_hosts:
      - "host.docker.internal:172.17.0.1" #gateway do docker
   
