@@ -11,6 +11,7 @@ import { DatabaseConfigService } from 'src/config/database/database.service';
         type: 'sqlite',
         database: databaseConfig.databaseName,
         entities: [databaseConfig.entities],
+        synchronize: true
       }),
       inject: [DatabaseConfigService],
     }),
